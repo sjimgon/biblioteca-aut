@@ -20,7 +20,7 @@
     <?php
         if($seguridad->isLogged()){?>
         
-            <h4>Bienvenido a la biblioteca</h4>
+            <h1>Bienvenido a la biblioteca</h1>
 
     <nav id='menu'>
         <a href="./gestion/gestBooks/listarLibros.php">Listado de libros</a>
