@@ -23,10 +23,24 @@ $users = new users($conexion);
 </head>
 <body>
     <header>
-    <?php
-        echo $cabecera;
-    ?>
-    <h1>Gestión de usuarios</h1>
+    <h1>Bienvenido a la biblioteca</h1>
+<nav id='menu'>
+        <a href="listarLibros.php">Listado de libros</a>
+        <a href="listarAutores.php">Listado de autores</a>
+        
+        <?php if ($_SESSION['rol'] === 'admin'): ?>
+                <a href="../gestBooks/insertarLibros.php">Gestionar libros</a>
+                <a href="../gestBooks/insertarAutor.php">Gestionar autores</a>
+                <a href="../gestUsers/gestUser.php">Gestionar usuarios</a>
+        <?php endif; ?>
+
+        <?php if ($_SESSION['rol'] === 'bibliotecario'): ?>
+            <a href="../gestBooks/insertarLibro.php">Gestionar libros</a>
+            <a href="../gestBooks/insertarAutor.php">Gestionar autores</a>
+        <?php endif; ?>
+
+    </nav>
+    <h2>Gestión de usuarios</h2>
     </header>
     <section id="formulario">
         <form action="" method="post" onsubmit="">

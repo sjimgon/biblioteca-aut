@@ -30,7 +30,7 @@ class libros{
     public function actualizar($id, $titulo, $genero, $autor, $nPaginas, $nEjemplares){
         $sql = "UPDATE $this->tabla SET Titulo = ?, Genero = ?, idAutor = ?, NumeroPaginas = ?, NumeroEjemplares = ? WHERE idAutor = ?";
         $stmt = $this->conexion->prepare($sql);
-        $stmt->bind_param('ssiiii', $titulo, $genero, $autor, $nPaginas, $nEjemplares, $id);
+        $stmt->bind_param('ssiiii', $titulo, $genero, $id, $nPaginas, $nEjemplares, $id);
         if ($stmt->execute() === false) {
             echo "Error al actualizar el libro";
         }

@@ -59,8 +59,8 @@ $seguridad = new seguridad($conexion);
         echo "<td>$autor[Nombre] $autor[Apellidos]</td>";
         echo "<td>".$libro['NumeroPaginas']."</td>";
         echo "<td>".$libro['NumeroEjemplares']."</td>";
-        echo "<td><a href='actualizarLibro.php?id=".$libro['id']."'>Actualizar</a></td>";
-        echo "<td><a href='borrarLibro.php?id=".$libro['id']."'>Borrar</a></td>";
+        echo "<td><a href='actualizarLibro.php?id=".$libro['idAutor']."'>Actualizar</a></td>";
+        echo "<td><a href='borrarLibro.php?id=".$libro['idAutor']."'>Borrar</a></td>";
         echo "</tr>";
     }
 

@@ -16,8 +16,10 @@
 
     </nav>
 
- <p>Desarrollado por: <a href="">@sjimgon</a></p>
-
-     <form method="post" action="../../index.php">
+ <form method="post" action="../../index.php">
             <button type="submit" name="volver">Volver a Inicio</button>
     </form>
+    
+ <p>Desarrollado por: <a href="">@sjimgon</a></p>
+
+    
