@@ -58,7 +58,8 @@ class users{
                 $password = $this->conexion->real_escape_string($password);
                 $salt = random_int(-1000000, 1000000);
                 $password = password_hash($password.$salt,PASSWORD_DEFAULT);
-                $miSet .= "password = '$password', salt = '$salt',";
+                $sql = "UPDATE $this->table SET 'password = '$password', salt = '$salt',' WHERE login = '$login';";
+                // $miSet .= "password = '$password', salt = '$salt',";
             }
             if($nombre or $nombre!=""){
                 $nombre = $this->conexion->real_escape_string($nombre);
@@ -72,8 +73,8 @@ class users{
                 $rol = $this->conexion->real_escape_string($rol);
                 $miSet .= "rol = '$rol',";
             }
-            $miSet = substr($miSet, 0, -1);
-            $sql = "UPDATE $this->table $miSet WHERE login = '$login';";
+            // $miSet = substr($miSet, 0, -1);
+            // $sql = "UPDATE $this->table $miSet WHERE login = '$login';";
             $result = $this->conexion->query($sql);
             return $result;
 
